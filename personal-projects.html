@@ -22,15 +22,6 @@
 </header>
 
 <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Personal Projects</h1>
-        <p class="lead">
-          Text
-        </p>
-      </div>
-    </section>
-
     <section class="section">
       <div class="container">
 
@@ -159,18 +150,48 @@
         
           <div class="project-images">
             <div class="project-image">
-              <img src="images/tmp.png"
+              <img src="images/aes_top.png"
+                   alt="tmp">
+            </div>
+            <div class="project-image">
+              <img src="images/aes_top_enc.png"
+                   alt="tmp">
+            </div>
+            <div class="project-image">
+              <img src="images/aes_top_dec.png"
                    alt="tmp">
             </div>
           </div>
           <div class="project-content">
             <h2>AES Encryption and Decryption Core</h2>
             <p>
-              PH text
+              An Advanced Encryption Standard (AES) core written in SystemVerilog. Capable 
+              of encrypting and decrypting data at AES-128, AES-192, and AES-256 standards, 
+              and has the (mostly untested) capability to do custom rates (IE: 160 bit key,
+              128 bit key with 14 rounds, etc.). It also features a cipher-block-chaining
+              (CBC) mode, though this is not completely functional. Key expansion takes
+              four cycles for every round needed; encryption and decryption both take a
+              number of cycles equal to the number of rounds. Each FIFO block (encryption
+              input, encryption output, decryption input, decryption output) has 1KB of
+              memory (128 bit plaintext x 64 entries).
+            </p>
+            <p>
+              This project was made during down-time between projects at an internship,
+              as a way of refreshing myself on RTL design and introducing myself to
+              cryptography (a course I'll be taking this upcoming fall). The actual
+              project took about a week of on-and-off work, with a bit of extra time
+              spent neatening things up before making this repository public (originally,
+              the entire codebase was in one, ~1100 line long file that I would run on
+              EDAPlayground). A prototype C file was also created to get myself used to
+              the encryption, decryption, and key expansion processes in an environment
+              I have more experience in. The main challenges were the finite field
+              theory--which was easy to implement, but hard to grasp--and dealing
+              with certain timing elements (data leaving a cycle too early, a cycle
+              too late, etc.).
             </p>
             <p><b>Language(s):</b> C, SystemVerilog</p>
             <p>
-                <b>Source(s):</b> <a href="#">TBD</a>
+                <b>Source(s):</b> <a href="https://github.com/cnokes14/AES_Core_V0">GitHub</a>
             </p>
           </div>
         </article>
