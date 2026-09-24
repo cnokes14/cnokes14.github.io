@@ -16,6 +16,8 @@
       <a href="academics.html">Academics</a>
       <a href="career.html">Career</a>
       <a class="active" href="personal-projects.html">Personal Projects</a>
+      <a href="hema.html">HEMA</a>
+      <a href="dnd.html">D&amp;D</a>
       <a href="other.html">Other</a>
     </nav>
   </div>
@@ -44,10 +46,11 @@
             <h2>Ventius Smash</h2>
 
             <p>
-              <i>Ventius Smash</i> is a simple 2D grid-based game based on an old LEGO Flash game, <i>Spinjitzu Smash</i>.
+              <i>Ventius Smash</i> is a simple 2D grid-based game based on an old LEGO Flash game, 
+              <a href="https://www.numuki.com/game/spinjitzu-smash-dx/"><i>Spinjitzu Smash</i></a>.
               It is designed entirely in Python, using the OpenCV, CVZone, and PlaySound3 libraries, among many others for
               more standard tools (e.g., multithreading, JSON parsing). The art is all my own, designed in an open-source
-              pixel art editor named, Piskel, using characters from personal writing projects.
+              pixel art editor, Piskel, using characters from personal writing projects.
             </p>
 
             <p>
@@ -73,6 +76,65 @@
             </p>
           </div>
 
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project">
+        
+          <div class="project-images">
+            <div class="project-image">
+              <img src="images/aes_top.png"
+                   alt="tmp">
+            </div>
+            <div class="project-image">
+              <img src="images/aes_top_enc.png"
+                   alt="tmp">
+            </div>
+            <div class="project-image">
+              <img src="images/aes_top_dec.png"
+                   alt="tmp">
+            </div>
+          </div>
+          <div class="project-content">
+            <h2>AES Encryption and Decryption Core</h2>
+            <p>
+              In mid-2024, I wrote an Advanced Encryption Standard (AES) core in SystemVerilog.
+              It is capable of encrypting and decrypting data at AES-128, AES-192, and AES-256 
+              standards, and has the (mostly untested) capability to do custom rates (e.g., 160 bit key,
+              128 bit key with 14 rounds, etc.). It also features a cipher-block-chaining
+              (CBC) mode, though this is not completely functional. Key expansion takes
+              four cycles for every round needed; encryption and decryption both take a
+              number of cycles equal to the number of rounds. Each FIFO block (encryption
+              input, encryption output, decryption input, decryption output) has 1KB of
+              memory (128 bit plaintext x 64 entries).
+            </p>
+            <p>
+              This project was made during down-time between projects at an internship,
+              as a way of refreshing myself on RTL design and introducing myself to
+              cryptography. The actual project took about a week of on-and-off work, with a 
+              bit of extra time spent neatening things up before making this repository public; 
+              originally, the entire codebase was in one 1100ish-line long file that I would run on
+              EDAPlayground. A prototype C file was also created to get myself used to
+              the encryption, decryption, and key expansion processes in an environment
+              I have more experience in. The main challenges were the finite field
+              theory--which was easy to implement, but hard to grasp--and dealing
+              with certain timing elements (data leaving a cycle too early, a cycle
+              too late, etc.).
+            </p>
+            <p>
+              After taking some more advanced classes in hardware design and cryptography,
+              there are quite a few things I'd want to touch up if I ever went back to update
+              (or redo) this project: calculating substitution box values on the fly rather than
+              using a look-up table, better pipelining and parallelization, on top of better RTL
+              code design and maintainability principles, like proper formatting, documentation,
+              testing, and general feature enhancements such as more advanced status registers,
+              and a standardized protocol (e.g., AXI) for the FIFO.
+            </p>
+            <p><b>Language(s):</b> C, SystemVerilog</p>
+            <p>
+                <b>Source(s):</b> <a href="https://github.com/cnokes14/AES_Core_V0">GitHub</a>
+            </p>
+          </div>
         </article>
 
         <!-- Project 2 -->
@@ -141,65 +203,6 @@
             <p><b>Language(s):</b> Python (with PyTorch)</p>
             <p>
                 <b>Source(s):</b> <a href="#">TBD</a>
-            </p>
-          </div>
-        </article>
-
-        <!-- Project 5 -->
-        <article class="project">
-        
-          <div class="project-images">
-            <div class="project-image">
-              <img src="images/aes_top.png"
-                   alt="tmp">
-            </div>
-            <div class="project-image">
-              <img src="images/aes_top_enc.png"
-                   alt="tmp">
-            </div>
-            <div class="project-image">
-              <img src="images/aes_top_dec.png"
-                   alt="tmp">
-            </div>
-          </div>
-          <div class="project-content">
-            <h2>AES Encryption and Decryption Core</h2>
-            <p>
-              In mid-2024, I wrote an Advanced Encryption Standard (AES) core in SystemVerilog.
-              It is capable of encrypting and decrypting data at AES-128, AES-192, and AES-256 
-              standards, and has the (mostly untested) capability to do custom rates (IE: 160 bit key,
-              128 bit key with 14 rounds, etc.). It also features a cipher-block-chaining
-              (CBC) mode, though this is not completely functional. Key expansion takes
-              four cycles for every round needed; encryption and decryption both take a
-              number of cycles equal to the number of rounds. Each FIFO block (encryption
-              input, encryption output, decryption input, decryption output) has 1KB of
-              memory (128 bit plaintext x 64 entries).
-            </p>
-            <p>
-              This project was made during down-time between projects at an internship,
-              as a way of refreshing myself on RTL design and introducing myself to
-              cryptography. The actual project took about a week of on-and-off work, with a 
-              bit of extra time spent neatening things up before making this repository public; 
-              originally, the entire codebase was in one 1100ish-line long file that I would run on
-              EDAPlayground. A prototype C file was also created to get myself used to
-              the encryption, decryption, and key expansion processes in an environment
-              I have more experience in. The main challenges were the finite field
-              theory--which was easy to implement, but hard to grasp--and dealing
-              with certain timing elements (data leaving a cycle too early, a cycle
-              too late, etc.).
-            </p>
-            <p>
-              After taking some more advanced classes in hardware design and cryptography,
-              there are quite a few things I'd want to touch up if I ever went back to update
-              (or redo) this project: calculating substitution box values on the fly rather than
-              using a look-up table, better pipelining and parallelization, on top of more standard
-              RTL design and maintainability principles, like standard formatting, documentation,
-              testing, and general feature enhancements such as more advanced status registers,
-              and a standardized FIFO method.
-            </p>
-            <p><b>Language(s):</b> C, SystemVerilog</p>
-            <p>
-                <b>Source(s):</b> <a href="https://github.com/cnokes14/AES_Core_V0">GitHub</a>
             </p>
           </div>
         </article>

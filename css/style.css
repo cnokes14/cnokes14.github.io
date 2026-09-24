@@ -33,6 +33,7 @@ nav a { color: var(--muted); padding: 8px 12px; border-radius: 8px; }
 nav a:hover, nav a.active { color: var(--text); background: var(--surface-2); text-decoration: none; }
 .hero { padding: 10px 0 10px; border-bottom: 1px solid var(--border); }
 .hero-grid { display: grid; grid-template-columns: 3fr 1.2fr; gap: 64px; align-items: center; }
+.hero-job { gap: 64px; align-items: center; }
 .eyebrow { color: var(--accent); font-size: .8rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 10px; }
 h1 { font-size: clamp(2.5rem, 6vw, 4.8rem); line-height: 1.03; margin: 0 0 22px; letter-spacing: -.04em; }
 h2 { font-size: 2rem; line-height: 1.2; margin: 0 0 18px; }
@@ -120,6 +121,10 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--mute
 }
 
 .project-content p {
+  color: var(--muted);
+}
+
+.hero li {
   color: var(--muted);
 }
 
