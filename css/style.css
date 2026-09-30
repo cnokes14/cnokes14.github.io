@@ -136,6 +136,10 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--mute
   margin-top: 24px;
 }
 
+.project-content li {
+  color: var(--muted);
+}
+
 @media (max-width: 760px) {
   .project {
     grid-template-columns: 1fr;
